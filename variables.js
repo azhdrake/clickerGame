@@ -230,8 +230,8 @@ let buildables = [{
 		resourceType: "labor",
 		amount: 5,
 		currentAmountEl: [droneAmountEl,droneAmounLeftEl],
-		startingEnergyPrice: 5,
-		startingMatPrice: 5,
+		startingEnergyPrice: 50,
+		startingMatPrice: 100,
 		buildButton: buildDroneButton,
 		costEl: droneCost
 	}, {
@@ -300,8 +300,8 @@ let buildables = [{
 		clickAmount: .01,
 		amount: 0,
 		currentAmountEl: [airTerraformerAmountEl],
-		startingEnergyPrice : 10,
-		startingMatPrice : 10,
+		startingEnergyPrice : 10000,
+		startingMatPrice : 10000,
 		buildButton: buildAirTeraButton,
 		costEl: airterraformCost
 	}, {
@@ -310,8 +310,8 @@ let buildables = [{
 		clickAmount: .01,
 		amount: 0,
 		currentAmountEl: [soilTerraformerAmountEl],
-		startingEnergyPrice : 10,
-		startingMatPrice : 10,
+		startingEnergyPrice : 10000,
+		startingMatPrice : 10000,
 		buildButton: buildSoilTeraButton,
 		costEl: soilterraformCost
 	}, {
@@ -320,8 +320,8 @@ let buildables = [{
 		clickAmount: .01,
 		amount: 0,
 		currentAmountEl: [waterTerraformerAmountEl],
-		startingEnergyPrice : 10,
-		startingMatPrice : 10,
+		startingEnergyPrice : 10000,
+		startingMatPrice : 10000,
 		buildButton: buildWaterTeraButton,
 		costEl: waterterraformCost
 	}
