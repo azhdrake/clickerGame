@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script async defer src="variables.js"></script>
+  <script async defer src="Game.js"></script>
+  <link rel="stylesheet" type="text/css" href="GameStyle.css">
+
+</head>
+<body>
+<div id="bar"> Hello Space!</div>
+<section>
+	<div class="all-columns">
+	<div class="column left">
+		<h1 class="title-text"> Residents </h1>
+		<div> Cryogenic Settlers: <span id="sleeper-counter">1000</span></div>
+		<div> Awake Settlers: <span id="awake-counter">0</span></div>
+		<div> Drones: <span id="drone-counter">5</span></div>
+		</br>
+		<h1 class="title-text"> Resources</h1>
+		<div> Power: <span id="power-counter">0</span></div>
+		<div> Food: <span id="food-counter">0</span></div>
+		<div> Material: <span id="build-counter">0</span></div>
+		<div> Living Spaces: <span id="living-counter"></span></div>
+		
+		</br>
+		<h1 class="title-text"> Terraforming Progress</h1>
+		<div> Air: <span id="air-terraform-percent">0</span>%</div>
+		<div> Soil: <span id="soil-terraform-percent">0</span>%</div>
+		<div> Water: <span id="water-terraform-percent">0</span>%</div>
+	</div>
+	<div class="column center">
+		<table id="gather-buttons">
+		<tr>
+			<td><button id="power-button" class="generator"> Generate Power 
+			</button></td>
+			<td><button id="farming-button" class="generator"> Farm </button></td>
+			<td><button id="mine-button" class="generator"> Mine </button></td>
+		</tr>
+		</table>
+		<table id="activity-buttons">
+		<tr>
+			<td><button id="wake-settler-button"> Wake Settler (<span id="awake-settlers">0</span>)</br></button></td>
+			<td><button id="freeze-settler-button"> Freeze Settler (<span id="sleeping-settlers"></span>)</br></button></td>
+			
+		</tr>
+		<tr>
+			<td><button id="build-living-unit"> Build Living Unit (<span id="living-unit-number">0</span>)</br><span class="resource-cost" id="living-unit-cost"> Energy , Materials  </button></td>
+			<td><button id="build-drone"> Build Drone (<span id="drone-number">5</span>)</br><span class="resource-cost" id="drone-cost"> Energy , Materials  </button></td>
+		</tr>
+		<tr>		
+			<td><button id="solar-button"> Build Solar Panel (<span id="solar-number">0</span>)</br><span class="resource-cost" id="solar-cost"> Energy , Materials  </button></td>
+			<td><button id="geothermal-button"> Build Geothermal Plant (<span id="geothermal-number">0</span>)</br><span class="resource-cost" id="geothermal-cost"> Energy , Materials  </button></td>
+		</tr>
+		<tr>		
+			<td><button id="greenhouse-button"> Build Greenhouse (<span id="greenhouse-number">0</span>)</br><span class="resource-cost" id="greenhouse-cost"> Energy , Materials  </button></td>
+			<td><button id="farm-button"> Build Farm (<span id="farm-number">0</span>)</br><span class="resource-cost" id="farm-cost"> Energy , Materials  </button></td>
+		</tr>
+		<tr>	
+			<td><button id="build-mine-button"> Build Mine (<span id="mine-number">0</span>)</br><span class="resource-cost" id="mine-cost"> Energy , Materials  </button></td>
+			<td><button id="big-mine-button"> Build Bigger Mine (<span id="big-mine-number">0</span>)</br><span class="resource-cost" id="big-mine-cost"> Energy , Materials  </button></td>
+		</tr>
+		</table>
+		<table>
+		<tr>		
+			<td><button id="air-terraformer-button"> Build Air Terraformer (<span id="air-terraformers">0</span>)</br><span class="resource-cost" id="air-terraformer-cost"> Energy , Materials  </button></td>
+			<td><button id="soil-terraformer-button"> Build Soil Terraformer (<span id="soil-terraformers">0</span>)</br><span class="resource-cost" id="soil-terraformer-cost"> Energy , Materials  </button></td>
+			<td><button id="water-terraformer-button"> Build Water Terraformer (<span id="water-terraformers">0</span>)</br><span class="resource-cost" id="water-terraformer-cost"> Energy , Materials  </button></td>
+		</tr>
+		</table>
+	</div>
+	<div class="column right">
+	  <table id="labor-division">
+	  <h1 class="title-text">Labor Division</h1>
+	  <tr>
+		<tr><td>Total Laborers: <span id="total-laborers">5</span></td></tr>
+		<tr><td>Generating: <span id="generator-number")>0</span></td><td><button id="plus-generator"> + </button></td><td><button id="minus-generator"> - </button></td></tr>
+		<td>Farming: <span id="farmer-number")>0</span> </td><td><button id="plus-farmer"> + </button></td><td><button id="minus-farmer"> - </button></td></tr>
+		<tr><td>Mining: <span id="miner-number")>0</span> </td><td><button id="plus-miner"> + </button></td><td><button id="minus-miner"> - </button></td></tr>
+		
+		<tr><td>Terraform Air: <span id="air-terraformer-number">0</span> </td><td><button id="plus-terraform-air"> + </button></td><td><button id="minus-terraform-air"> - </button></td></tr>
+		<tr><td>Terraform Soil: <span id="soil-terraformer-number">0</span> </td><td><button id="plus-terraform-soil"> + </button></td><td><button id="minus-terraform-soil"> - </button></td></tr>
+		<tr><td>Terraform Water: <span id="water-terraformer-number">0</span></td><td><button id="plus-terraform-water"> + </button></td><td><button id="minus-terraform-water"> - </button></td></tr>
+	  <table>
+	</div>
+	</div>
+</section>
+</body>
+</html>

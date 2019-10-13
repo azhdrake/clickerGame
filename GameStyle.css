@@ -1,0 +1,106 @@
+body{
+	background-image: url('https://apod.nasa.gov/apod/image/1904/sandqvist169_colombari.jpg');
+	background-color: black;
+	padding: 0;
+	margin: 0;
+}
+
+#bar{
+    background:white;
+    position:absolute;
+    left: 0;
+    right: 0;
+    padding:15px;
+    height:60px;
+    background-size:100%;    
+    margin: 0 auto;         
+}
+
+.all-columns{
+    display: table;
+    color: green;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 90px;
+}
+
+.column {
+    background-color: white;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.left {
+    width: 25%;
+    padding: 1em;
+    padding-top: 0;
+}
+
+.center {
+    text-align: center;
+    width: 50%;
+}
+
+.right {
+    width: 25%;
+}
+
+.title-text{
+	font-size: 1.15em;
+	padding-bottom: 0;
+	margin-bottom: .15em;
+	text-decoration: underline overline;
+}
+
+button{
+	background-color: gainsboro;
+}
+	
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+button:disabled,
+button[disabled]{
+	background-color: gray;
+	color: black;~
+}
+
+table{
+    margin: auto;
+    width: 100%;
+}
+
+#gather-buttons{
+	table-layout: fixed;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	margin: 0;
+}
+
+#activity-buttons{
+	table-layout: fixed;
+}
+
+.resource-cost {
+	font-size: .75em;
+}
+
+button{
+    width: 100%;
+    padding: 3px 5px;
+}
+
+section{
+    margin: auto;
+    width: 65em;
+}
+
+@media only screen and (max-width: 60em) {
+    .column {
+        display: block;
+        width: 35em;
+    }
+}
