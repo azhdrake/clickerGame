@@ -173,6 +173,8 @@ function ensurePlaceToLive(){
 	buildables.forEach(function(structure){
 		if(structure["type"] == "livingUnit"){
 			livingSpaceNumber = structure["amount"]
+		}else if(structure["type"] == "multiLivingUnit"]){
+			livingSpaceNumber = structure["amount"] * structure["value"]
 		}
 	})
 	let result
@@ -221,7 +223,7 @@ function checkPrices(){
 }
 
 function findPrice(starting, amount){
-	return starting - 1 + Math.ceil(Math.pow(1.15, amount))
+	return Math.ceil(starting * Math.pow(1.15, amount))
 }
 
 function checkForPlayerWin(){

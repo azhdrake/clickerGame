@@ -14,25 +14,33 @@ let droneAmounLeftEl = document.querySelector("#drone-counter")
 let awakeSettlersAmountEl = document.querySelector("#awake-settlers")
 let sleepingSettlersAmountEl = document.querySelector("#sleeping-settlers")
 let livingUnitAmountEl = document.querySelector("#living-unit-number")
+let multiLivingUnitAmountEl = document.querySelector("#multi-living-unit-number")
 let droneAmountEl = document.querySelector("#drone-number")
 let solarPanelAmountEl = document.querySelector("#solar-number")
+let windTurbineAmountEl = document.querySelector("#wind-turbine-number")
 let geothermalAmountEl = document.querySelector("#geothermal-number")
+let gardenAmountEl = document.querySelector("#garden-number")
 let greenhouseAmountEl = document.querySelector("#greenhouse-number")
 let farmAmountEl = document.querySelector("#farm-number")
 let mineAmountEl = document.querySelector("#mine-number")
 let bigMineAmountEl = document.querySelector("#big-mine-number")
+let evenBiggerMineAmountEl = document.querySelector("#biggest-mine-number")
 let airTerraformerAmountEl = document.querySelector("#air-terraformers")
 let soilTerraformerAmountEl = document.querySelector("#soil-terraformers")
 let waterTerraformerAmountEl = document.querySelector("#water-terraformers")
 
 let livingUnitCost = document.querySelector("#living-unit-cost")
+let multiLivingUnitCost = document.querySelector("#multi-living-unit-cost")
 let droneCost = document.querySelector("#drone-cost")
 let solarCost = document.querySelector("#solar-cost")
+let windCost = document.querySelector("#wind-turbine-cost")
 let geothermalCost = document.querySelector("#geothermal-cost")
+let gardenCost = document.querySelector("#garden-cost")
 let greenhouseCost = document.querySelector("#greenhouse-cost")
 let farmCost = document.querySelector("#farm-cost")
 let mineCost = document.querySelector("#mine-cost")
 let bigMineCost = document.querySelector("#big-mine-cost")
+let biggerMineCost = document.querySelector("#biggest-mine-cost")
 
 let airterraformCost = document.querySelector("#air-terraformer-cost")
 let soilterraformCost = document.querySelector("#soil-terraformer-cost")
@@ -45,13 +53,17 @@ let mineClicker = document.querySelector("#mine-button")
 let wakeSettlerButton = document.querySelector("#wake-settler-button")
 let freezeSettlerButton = document.querySelector("#freeze-settler-button")
 let buildLivingUnitButton = document.querySelector("#build-living-unit")
+let buildMultiLivingUnitButton = document.querySelector("#build-multi-living-unit")
 let buildDroneButton = document.querySelector("#build-drone")
 let buildSolarButton = document.querySelector("#solar-button")
+let buildWindButton = document.querySelector("#build-wind-turbine-button")
 let buildGeoButton = document.querySelector("#geothermal-button")
+let buildGardenButton = document.querySelector("#build-garden-button")
 let buildGreenhouseButton = document.querySelector("#greenhouse-button")
 let buildFarmButton = document.querySelector("#farm-button")
 let buildMineButton = document.querySelector("#build-mine-button")
 let buildBigMineButton = document.querySelector("#big-mine-button")
+let buildBiggestMineButton = document.querySelector("#build-biggest-mine-button")
 
 let buildAirTeraButton = document.querySelector("#air-terraformer-button")
 let buildSoilTeraButton = document.querySelector("#soil-terraformer-button")
@@ -220,12 +232,23 @@ let buildables = [{
 		type: "livingUnit",
 		resourceType: "living",
 		amount: 0,
+		value: 1,
 		currentAmountEl: [livingUnitAmountEl, livingAmount],
 		startingEnergyPrice : 5,
 		startingMatPrice : 5,
 		buildButton: buildLivingUnitButton,
 		costEl: livingUnitCost
-	},{
+	}, {
+		type: "multiLivingUnit",
+		resourceType: "living",
+		amount: 0,
+		value: 2,
+		currentAmountEl: [multiLivingUnitAmountEl, livingAmount],
+		startingEnergyPrice: 10000,
+		startingMatPrice: 5000,
+		buildButton: buildMultiLivingUnitButton,
+		costEl: multiLivingUnitCost
+	}, {
 		type: "drone",
 		resourceType: "labor",
 		amount: 5,
@@ -245,33 +268,53 @@ let buildables = [{
 		buildButton: buildSolarButton,
 		costEl: solarCost
 	}, {
-		type: "geothermalPlant",
+		type: "windTurbine",
 		resourceType: "energy",
 		clickAmount: 10,
 		amount: 0,
+		currentAmountEl: [windTurbineAmountEl],
+		startingEnergyPrice: 1000,
+		startingMatPrice: 500,
+		buildButton: buildWindButton,
+		costEl: windCost
+	}, {
+		type: "geothermalPlant",
+		resourceType: "energy",
+		clickAmount: 100,
+		amount: 0,
 		currentAmountEl: [geothermalAmountEl],
-		startingEnergyPrice : 1000,
-		startingMatPrice : 500,
+		startingEnergyPrice : 10000,
+		startingMatPrice : 5000,
 		buildButton: buildGeoButton,
 		costEl: geothermalCost
 	}, {
-		type: "greenhouse",
+		type: "garden",
 		resourceType: "food",
 		clickAmount: 1,
 		amount: 0,
+		currentAmountEl: [gardenAmountEl],
+		startingEnergyPrice: 50,
+		startingMatPrice: 50,
+		buildButton: buildGardenButton,
+		costEl: gardenCost
+	}, {
+		type: "greenhouse",
+		resourceType: "food",
+		clickAmount: 10,
+		amount: 0,
 		currentAmountEl : [greenhouseAmountEl],
-		startingEnergyPrice : 5,
-		startingMatPrice : 5,
+		startingEnergyPrice : 500,
+		startingMatPrice : 500,
 		buildButton: buildGreenhouseButton,
 		costEl: greenhouseCost
 	}, {
 		type: "farm",
 		resourceType: "food",
-		clickAmount: 10,
+		clickAmount: 100,
 		amount: 0,
 		currentAmountEl : [farmAmountEl],
-		startingEnergyPrice : 500,
-		startingMatPrice : 250,
+		startingEnergyPrice : 5000,
+		startingMatPrice : 2500,
 		buildButton: buildFarmButton,
 		costEl: farmCost
 	}, {
@@ -295,13 +338,23 @@ let buildables = [{
 		buildButton: buildBigMineButton,
 		costEl: bigMineCost
 	}, {
+		type: "evenBiggerMine",
+		resourceType: "mat",
+		clickAmount: 100,
+		amount: 0,
+		currentAmountEl: [evenBiggerMineAmountEl],
+		startingEnergyPrice: 10000,
+		startingMatPrice: 5000,
+		buildButton: buildBiggestMineButton,
+		costEl: biggerMineCost
+	}, {
 		type: "terraformer",
 		resourceType: "airTerra",
 		clickAmount: .01,
 		amount: 0,
 		currentAmountEl: [airTerraformerAmountEl],
-		startingEnergyPrice : 10000,
-		startingMatPrice : 10000,
+		startingEnergyPrice : 100000,
+		startingMatPrice : 100000,
 		buildButton: buildAirTeraButton,
 		costEl: airterraformCost
 	}, {
@@ -310,8 +363,8 @@ let buildables = [{
 		clickAmount: .01,
 		amount: 0,
 		currentAmountEl: [soilTerraformerAmountEl],
-		startingEnergyPrice : 10000,
-		startingMatPrice : 10000,
+		startingEnergyPrice : 100000,
+		startingMatPrice : 100000,
 		buildButton: buildSoilTeraButton,
 		costEl: soilterraformCost
 	}, {
@@ -320,8 +373,8 @@ let buildables = [{
 		clickAmount: .01,
 		amount: 0,
 		currentAmountEl: [waterTerraformerAmountEl],
-		startingEnergyPrice : 10000,
-		startingMatPrice : 10000,
+		startingEnergyPrice : 100000,
+		startingMatPrice : 100000,
 		buildButton: buildWaterTeraButton,
 		costEl: waterterraformCost
 	}
