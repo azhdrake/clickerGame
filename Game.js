@@ -8,7 +8,6 @@ gameTick = setInterval(gameClock, 1000)
 
 
 function gameClock(){
-	console.log("test")
 	autoclick()
 	foodTime()
 	checkForPlayerWin()
@@ -173,8 +172,9 @@ function ensurePlaceToLive(){
 	buildables.forEach(function(structure){
 		if(structure["type"] == "livingUnit"){
 			livingSpaceNumber = structure["amount"]
-		}else if(structure["type"] == "multiLivingUnit"]){
-			livingSpaceNumber = structure["amount"] * structure["value"]
+		}
+		if(structure["type"] == "multiLivingUnit"){
+			livingSpaceNumber += structure["amount"] * structure["value"]
 		}
 	})
 	let result
@@ -190,20 +190,27 @@ function ensurePlaceToLive(){
 	return result
 }
 
+function thisIsStupid(){
+	
+}
+
 function disableFreezing(){
 	stats.forEach(function(stat){
-		if(stat["type"] == "labor" && stat["amount"] <= 0){
-			freezeSettlerButton.disabled = true
-		} else {
-			resources.forEach(function(resource){
-				if(resource["name"] == "sleepingSettlers"){ 
-					if(resource["amount"] == 100){
-						freezeSettlerButton.disabled = true
-					} else {
-						freezeSettlerButton.disabled = false
+		if(stat["type"] == "labor"){
+			if(stat["amount"] <= 0){
+				freezeSettlerButton.disabled = true
+			} else {
+				resources.forEach(function(resource){
+					if(resource["name"] == "sleepingSettlers"){ 
+						if(resource["amount"] == 100){
+							freezeSettlerButton.disabled = true
+						} else {
+							freezeSettlerButton.disabled = false
+							console.log("The fuck???")
+						}
 					}
-				}
-			})
+				})
+			}
 		}
 	})
 	
