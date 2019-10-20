@@ -239,8 +239,8 @@ let buildables = [{
 		amount: 0,
 		value: 1,
 		currentAmountEl: [livingUnitAmountEl],
-		startingEnergyPrice : 5,
-		startingMatPrice : 5,
+		startingEnergyPrice : 50,
+		startingMatPrice : 50,
 		buildButton: buildLivingUnitButton,
 		costEl: livingUnitCost
 	}, {
