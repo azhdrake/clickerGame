@@ -1,6 +1,25 @@
+:root{
+	--main-background-color: #E9A43C;
+	--normal-text-color: black;
+	--title-text-color: #2f4d12;
+	--main-ui-background-color: #FDEC9E;
+	--border-color: black;
+	--top-bar-color: #70c42f;
+	--disabled-button-bg-color: #B77A29;
+	--button-bg-color: #70c42f;
+	--button-hover-color: #2f4d12;
+	--button-hover-text-color: #FDEC9E;
+	--link-color: #0000EE;
+	--instructions-bg-color: #FDEC9E;
+	--top-border-color: #B77A29;
+	--top-border-thickness: 5px;
+	--middle-border-color:  #B77A29;
+	--middle-border-thickness: 10px;
+}
+
 body{
-	background-image: url('https://apod.nasa.gov/apod/image/1904/sandqvist169_colombari.jpg');
-	background-color: black;
+/*	background-image: url('https://apod.nasa.gov/apod/image/1904/sandqvist169_colombari.jpg');*/
+	background-color: var(--main-background-color);
 	padding: 0;
 	margin: 0;
 	text-align: center;
@@ -10,19 +29,19 @@ body{
 	font-size: 2em;
 	padding: 0;
 	margin-bottom: 0;
-	color: black;
+	color: var(--title-text-color);
 }
 
 .menu-text{
 	margin-top: .5em;
 	width: 30em;
 	text-decoration: underline;
-	color: #0000EE;
+	color: var(--link-color);
 }
 
 #bar{
 	text-align: center;
-    background-color: #ffffff;
+    background-color: var(--top-bar-color);
     position: absolute;
     left: 0;
     right: 0;
@@ -30,7 +49,7 @@ body{
     height: 90px;
     background-size: 100%;
     margin: 0 auto;  
-	border-bottom: solid 3px black;
+	border-bottom: solid var(--top-border-thickness) var(--top-border-color);
 }
 
 #dim-game{
@@ -43,19 +62,20 @@ body{
 
 #instructions{
 	text-align: left;
-    background: white;
+    background: var(--instructions-bg-color);
 	position: absolute;
 	left: 50%;
 	width: 40em;
     padding: 1em;   
     margin-left: -20em; 
 	margin-top: 90px;
+	border: solid var(--middle-border-thickness) var(--middle-border-color);
 }
 
 #close{
 	text-align: center;
 	text-decoration: underline;
-	color: #0000EE; 
+	color: var(--link-color); 
 }
 
 section{
@@ -63,8 +83,12 @@ section{
     width: 65em;
 }
 
+.title-text{
+	color: var(--title-text-color);
+}
+
 .all-columns{
-	color: #000000;
+	color: var(--normal-text-color);
     display: table;
     width: 100%;
     margin: 0 auto;
@@ -72,13 +96,16 @@ section{
 }
 
 .column {
-	background-color: #ffffff;
+	background-color: var(--main-ui-background-color);
 	padding: 1em;
     display: table-cell;
     vertical-align: top;
+	border-top: solid var(--middle-border-thickness) var(--middle-border-color);
+	border-bottom: solid var(--middle-border-thickness) var(--middle-border-color);
 }
 
 .left {
+	border-left: solid var(--middle-border-thickness) var(--middle-border-color);
     width: 20%;
     padding-top: 0;
 	text-align: left;
@@ -90,6 +117,7 @@ section{
 }
 
 .right {
+	border-right: solid var(--middle-border-thickness) var(--middle-border-color);
     width: 20%;
 	padding-top: 0;
 	padding-left: 0;
@@ -106,21 +134,21 @@ section{
 button{
 	width: 100%;
     padding: 3px 5px;
-	background-color: gainsboro;
+	background-color: var(--button-bg-color);
 	border: 0;
 	box-shadow: none;
 	border-radius: 0px;
 }
 	
 button:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
+    background-color: var(--button-hover-color); 
+    color: var(--button-hover-text-color);
 }
 
 button:disabled,
 button[disabled]{
-	background-color: gray;
-	color: black;~
+	background-color: var(--disabled-button-bg-color);
+	color: var(--normal-text-color);
 }
 
 table{
