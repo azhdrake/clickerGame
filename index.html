@@ -7,7 +7,24 @@
 
 </head>
 <body>
-<div id="bar"> Hello Space!</div>
+<div id="bar"> 
+	<h1 class="title-text" id="main-title">Terraform</h1>
+	<table class="menu-text"><tr>
+		<td><span id="instruct">Instructions</span></td>
+		<td><span id="new-game">New Game</span></td>
+		<tr>
+		</table>
+</div>
+<div id="dim-game">
+	<div id="instructions">
+		Welcome to Terraform! Your goal in this game is to wake all the settlers that have been cryogenically frozen for their long journey through space and to terraform the planet’s air, soil, and water to be the correct conditions for them to live comfortably.</br></br>
+		To do this, you will need to have a supply of ENERGY, FOOD, and BUILDING MATERIALS. Each of these resources has a corresponding GATHER BUTTON, which will generate one unit of the desired resource per click. You can also get resources by building the relevant STRUCTURE and assigning LABORERS to the associated activity. This generates one resource per structure for each laborer working per second. Make sure you build the structure and assign the laborers, neither one will do anything on their own!</br></br> 
+		You can assign or unassign all available laborers by DOUBLE CLICKING the add or subtract buttons. </br></br>
+		To WAKE the frozen settlers, you need a LIVING SPACE for them. Living spaces are structures and can be bought with resources like any other structure. Settlers require FOOD or they will DIE. If all settlers die you LOSE THE GAME. Each settler consumes one food per second. Once woken, a settler becomes a LABORER and can help generate resources.</br></br>
+		To TERRAFORM the planet, you need to buy TERRIFORMERS and assign LABORERS to the corresponding area. Once you have reached 100% in all three terraforming areas and have woken all 100 settlers, you WIN THE GAME!</br>
+		<div id="close"> CLOSE </div>
+	</div>
+</div>
 <section>
 	<div class="all-columns">
 	<div class="column left">
@@ -23,7 +40,7 @@
 		<div> Living Spaces: <span id="living-counter"></span></div>
 		
 		</br>
-		<h1 class="title-text"> Terraforming Progress</h1>
+		<h1 class="title-text"> Progress</h1>
 		<div> Air: <span id="air-terraform-percent">0</span>%</div>
 		<div> Soil: <span id="soil-terraform-percent">0</span>%</div>
 		<div> Water: <span id="water-terraform-percent">0</span>%</div>
@@ -77,13 +94,13 @@
 	  <h1 class="title-text">Labor Division</h1>
 	  <tr>
 		<tr><td>Total Laborers: <span id="total-laborers">5</span></td></tr>
-		<tr><td>Generating: <span id="generator-number")>0</span></td><td><button id="plus-generator"> + </button></td><td><button id="minus-generator"> - </button></td></tr>
-		<td>Farming: <span id="farmer-number")>0</span> </td><td><button id="plus-farmer"> + </button></td><td><button id="minus-farmer"> - </button></td></tr>
-		<tr><td>Mining: <span id="miner-number")>0</span> </td><td><button id="plus-miner"> + </button></td><td><button id="minus-miner"> - </button></td></tr>
+		<tr><td>Generating: <span id="generator-number")>0</span></td><td><button class="adjustButton" id="plus-generator"> + </button></td><td><button class="adjustButton minus-button" id="minus-generator"> - </button></td></tr>
+		<td>Farming: <span id="farmer-number")>0</span> </td><td><button class="adjustButton" id="plus-farmer"> + </button></td><td><button class="adjustButton minus-button" id="minus-farmer"> - </button></td></tr>
+		<tr><td>Mining: <span id="miner-number")>0</span> </td><td><button class="adjustButton" id="plus-miner"> + </button></td><td><button class="adjustButton minus-button" id="minus-miner"> - </button></td></tr>
 		
-		<tr><td>Terraform Air: <span id="air-terraformer-number">0</span> </td><td><button id="plus-terraform-air"> + </button></td><td><button id="minus-terraform-air"> - </button></td></tr>
-		<tr><td>Terraform Soil: <span id="soil-terraformer-number">0</span> </td><td><button id="plus-terraform-soil"> + </button></td><td><button id="minus-terraform-soil"> - </button></td></tr>
-		<tr><td>Terraform Water: <span id="water-terraformer-number">0</span></td><td><button id="plus-terraform-water"> + </button></td><td><button id="minus-terraform-water"> - </button></td></tr>
+		<tr><td>Terraform Air: <span id="air-terraformer-number">0</span> </td><td><button class="adjustButton" id="plus-terraform-air"> + </button></td><td><button class="adjustButton minus-button" id="minus-terraform-air"> - </button></td></tr>
+		<tr><td>Terraform Soil: <span id="soil-terraformer-number">0</span> </td><td><button class="adjustButton" id="plus-terraform-soil"> + </button></td><td><button class="adjustButton minus-button" id="minus-terraform-soil"> - </button></td></tr>
+		<tr><td>Terraform Water: <span id="water-terraformer-number">0</span></td><td><button class="adjustButton" id="plus-terraform-water"> + </button></td><td><button class="adjustButton minus-button" id="minus-terraform-water"> - </button></td></tr>
 	  <table>
 	</div>
 	</div>

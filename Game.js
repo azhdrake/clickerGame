@@ -5,8 +5,6 @@ updateAmounts()
 setStatButtons()
 gameTick = setInterval(gameClock, 1000)
 
-
-
 function gameClock(){
 	autoclick()
 	foodTime()
@@ -85,6 +83,22 @@ function setLaborButtons(){
 			})
 			updateAmounts()
 		})
+		butt["butt"].addEventListener("dblclick",function(){
+			console.log("test")
+			stats.forEach(function(stat){
+				if(stat["name"] == "currentLaborers"){	
+					if(stat["amount"] > 0 || butt["value"] < 0){
+						resources.forEach(function(resource){
+							while(butt["type"] == resource["type"] && (resource["amount"] > 0 && stat["amount"] > 0 || butt["value"] > 0  && stat["amount"])){
+								stat["amount"] -= butt["value"]
+								resource["amount"] += butt["value"]
+								
+							}
+						})
+					}
+				}
+			})
+		})
 	})
 }
 
@@ -154,10 +168,15 @@ function updateAmounts(){ //checks the amount listed in each entry of the three 
 			stat["elmnts"].innerHTML = stat["amount"]
 		}
 	})
+	let numberOfLivingUnits = 0 
 	buildables.forEach(function(structure){
 		structure["currentAmountEl"].forEach(function(elm){
 			elm.innerHTML = structure["amount"]
 		})
+		if(structure["resourceType"] == "living"){
+			numberOfLivingUnits += structure["amount"] * structure["value"]
+			livingAmount.innerHTML = numberOfLivingUnits
+		}
 	})
 	disableFreezing()
 	if(ensurePlaceToLive()){
@@ -206,7 +225,6 @@ function disableFreezing(){
 							freezeSettlerButton.disabled = true
 						} else {
 							freezeSettlerButton.disabled = false
-							console.log("The fuck???")
 						}
 					}
 				})
@@ -259,3 +277,17 @@ function checkForPlayerWin(){
 		})
 	}
 }
+
+newGameButton.addEventListener("click", function(){
+	if(confirm("Are you sure you want to start a new game? All progress will be lost.")){
+		location.reload()
+	}
+})
+
+instructionButton.addEventListener("click", function(){
+	dimScreen.style.visibility="visible"
+})
+
+closeButton.addEventListener("click", function(){
+	dimScreen.style.visibility="hidden"
+})

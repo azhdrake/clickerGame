@@ -1,3 +1,8 @@
+let instructionButton = document.querySelector("#instruct")
+let newGameButton = document.querySelector("#new-game")
+let closeButton = document.querySelector("#close")
+let dimScreen = document.querySelector("#dim-game")
+
 let energyAmount = document.querySelector("#power-counter")
 let foodAmount = document.querySelector("#food-counter")
 let buildAmount = document.querySelector("#build-counter")
@@ -233,7 +238,7 @@ let buildables = [{
 		resourceType: "living",
 		amount: 0,
 		value: 1,
-		currentAmountEl: [livingUnitAmountEl, livingAmount],
+		currentAmountEl: [livingUnitAmountEl],
 		startingEnergyPrice : 5,
 		startingMatPrice : 5,
 		buildButton: buildLivingUnitButton,
@@ -243,7 +248,7 @@ let buildables = [{
 		resourceType: "living",
 		amount: 0,
 		value: 2,
-		currentAmountEl: [multiLivingUnitAmountEl, livingAmount],
+		currentAmountEl: [multiLivingUnitAmountEl],
 		startingEnergyPrice: 10000,
 		startingMatPrice: 5000,
 		buildButton: buildMultiLivingUnitButton,

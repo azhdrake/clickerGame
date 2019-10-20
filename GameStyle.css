@@ -3,37 +3,85 @@ body{
 	background-color: black;
 	padding: 0;
 	margin: 0;
+	text-align: center;
+}
+
+#main-title{
+	font-size: 2em;
+	padding: 0;
+	margin-bottom: 0;
+	color: black;
+}
+
+.menu-text{
+	margin-top: .5em;
+	width: 30em;
+	text-decoration: underline;
+	color: #0000EE;
 }
 
 #bar{
-    background:white;
-    position:absolute;
+	text-align: center;
+    background-color: #ffffff;
+    position: absolute;
     left: 0;
     right: 0;
-    padding:15px;
-    height:60px;
-    background-size:100%;    
-    margin: 0 auto;         
+    padding: 0;
+    height: 90px;
+    background-size: 100%;
+    margin: 0 auto;  
+	border-bottom: solid 3px black;
+}
+
+#dim-game{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	width: 100%;
+	visibility: hidden;
+}
+
+#instructions{
+	text-align: left;
+    background: white;
+	position: absolute;
+	left: 50%;
+	width: 40em;
+    padding: 1em;   
+    margin-left: -20em; 
+	margin-top: 90px;
+}
+
+#close{
+	text-align: center;
+	text-decoration: underline;
+	color: #0000EE; 
+}
+
+section{
+    margin: auto;
+    width: 65em;
 }
 
 .all-columns{
+	color: #000000;
     display: table;
-    color: green;
     width: 100%;
     margin: 0 auto;
-    padding-top: 90px;
+    padding-top: 150px;
 }
 
 .column {
-    background-color: white;
+	background-color: #ffffff;
+	padding: 1em;
     display: table-cell;
     vertical-align: top;
 }
 
 .left {
     width: 20%;
-    padding: 1em;
     padding-top: 0;
+	text-align: left;
 }
 
 .center {
@@ -43,6 +91,9 @@ body{
 
 .right {
     width: 20%;
+	padding-top: 0;
+	padding-left: 0;
+	text-align: left;
 }
 
 .title-text{
@@ -53,7 +104,12 @@ body{
 }
 
 button{
+	width: 100%;
+    padding: 3px 5px;
 	background-color: gainsboro;
+	border: 0;
+	box-shadow: none;
+	border-radius: 0px;
 }
 	
 button:hover {
@@ -84,23 +140,31 @@ table{
 	table-layout: fixed;
 }
 
+#settler-buttons{
+	table-layout: fixed;
+	margin: auto;
+    width: 100%;
+}
+
 .resource-cost {
 	font-size: .75em;
 }
 
-button{
-    width: 100%;
-    padding: 3px 5px;
+.adjustButton{
+	width: auto;
+	border-radius: 50%;
+	padding-left: .5em;
+	padding-right: .5em;
 }
 
-section{
-    margin: auto;
-    width: 65em;
+.minus-button{
+	padding-left: .6em;
+	padding-right: .6em;
 }
 
 @media only screen and (max-width: 60em) {
     .column {
         display: block;
-        width: 35em;
+        width: 40em;
     }
 }
